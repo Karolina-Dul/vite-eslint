@@ -12,6 +12,45 @@ function App() {
     setText("licznik");
   };
 
+  // * Ćwiczenia na zajęciach z 07.07.2023
+  // ! Funkcja I
+  function countCharacters(word: string): number {
+    return word.length;
+  }
+
+  // ! Funkcja II
+  function isEven(inputNumber: number): boolean {
+    const isNumberEven = inputNumber % 2;
+    return isNumberEven === 0;
+  }
+
+  // ! Funkcja III
+  // let valueToPass: boolean;
+  // valueToPass = true;
+  // valueToPass = false;
+  function getParityMessage(booleanValue: boolean): string {
+    return booleanValue
+      ? "Ta liczba jest parzysta"
+      : "Ta liczba nie jest parzysta";
+  }
+
+  // ! Funkcja IV
+  function processString(stringInFunc?: string): string {
+    if (stringInFunc) {
+      const numberOfLetter: number = countCharacters(stringInFunc);
+      const isStringEvenResponse: string = getParityMessage(
+        isEven(numberOfLetter)
+      );
+      return console.log(
+        `Podany string to "${stringInFunc}". Liczba jego znaków to ${numberOfLetter}. ${isStringEvenResponse}.`
+      );
+    } else {
+      return console.log("Nie podano argumentu");
+    }
+  }
+
+  processString("Karolina");
+
   return (
     <>
       <div>
